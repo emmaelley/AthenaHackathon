@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href='/static/style.css' />
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+</h1> Welcome {{ name }}! </h1>
+
+<div class=page>
+  <h1>Available Technology</h1>
+  {% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+  {% endfor %}
+</div>
+
+<a href="{{url_for('index')}}">Home</a>
+<a href="{{url_for('map')}}">Click here to see available technology on a map.</a>
+
+<ul>
+  <li><a href="{{url_for('index')}}">Home</a></li>
+  <li><a class="active" href="{{url_for('organisations')}}">Organisations</a></li>
+  <li><a href="{{url_for('map')}}">Map</a></li>
+  <li><a href="{{url_for('submitRequest')}}">Submit Request</a></li>
+</ul>
+
+</body>
+</html>

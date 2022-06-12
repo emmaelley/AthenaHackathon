@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href='/static/style.css' />
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<a href="{{url_for('index')}}">Home</a>
+
+<h2>
+    Request used technology.
+</h2>
+<form method="post" action="/submitOrganisation">
+    <p>Charity Name: <input type="text" name="charity_name"></p>
+    <p>Lot ID: <input type="text" name="lot_id"></p>
+    <p>Quantity: <input type="text" name="quantity"></p>
+    <p><input type="submitOrganisation"></p>
+</form>
+
+</body>
+</html>
