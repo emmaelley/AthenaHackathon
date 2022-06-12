@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b8db6cd8a64b7288968abfe5165273cf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_b8db6cd8a64b7288968abfe5165273cf" ></div>
+        
+</body>
+<script>    
+    
+            var map_b8db6cd8a64b7288968abfe5165273cf = L.map(
+                "map_b8db6cd8a64b7288968abfe5165273cf",
+                {
+                    center: [51.509865, -0.118092],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8dc82bb653a28d6b75a9c5028cb20756 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b8db6cd8a64b7288968abfe5165273cf);
+        
+    
+            var feature_group_ca1912ee51d96817dccb98215d7f7bc3 = L.featureGroup(
+                {}
+            ).addTo(map_b8db6cd8a64b7288968abfe5165273cf);
+        
+    
+            var circle_marker_aa8b7425763da83379b893779182c990 = L.circleMarker(
+                [51.5188151, -0.0863075],
+                {"bubblingMouseEvents": true, "color": "#fab30c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fab30c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ca1912ee51d96817dccb98215d7f7bc3);
+        
+    
+        var popup_3e2740454b34ec804f8dd799feda4550 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_85ac8b5fd1c19a9ba8a02d53956cdcb9 = $(`<div id="html_85ac8b5fd1c19a9ba8a02d53956cdcb9" style="width: 100.0%; height: 100.0%;">Athena Hackathon<br> Category: laptop<br> Apple MacBook Pro (2018)<br> Quantity: 2</div>`)[0];
+            popup_3e2740454b34ec804f8dd799feda4550.setContent(html_85ac8b5fd1c19a9ba8a02d53956cdcb9);
+        
+
+        circle_marker_aa8b7425763da83379b893779182c990.bindPopup(popup_3e2740454b34ec804f8dd799feda4550)
+        ;
+
+        
+    
+    
+            var circle_marker_cd1be9790322fc4a449532ef755ea497 = L.circleMarker(
+                [51.5142994, -0.1048346],
+                {"bubblingMouseEvents": true, "color": "#fab30c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fab30c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ca1912ee51d96817dccb98215d7f7bc3);
+        
+    
+        var popup_01925fc54bc259d85cab171b53185976 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_56f8730f669df2a05b3cb8728a94bd4d = $(`<div id="html_56f8730f669df2a05b3cb8728a94bd4d" style="width: 100.0%; height: 100.0%;">Visa<br> Category: laptop<br> Acer Swift 3 AMD<br> Quantity: 4</div>`)[0];
+            popup_01925fc54bc259d85cab171b53185976.setContent(html_56f8730f669df2a05b3cb8728a94bd4d);
+        
+
+        circle_marker_cd1be9790322fc4a449532ef755ea497.bindPopup(popup_01925fc54bc259d85cab171b53185976)
+        ;
+
+        
+    
+    
+            var feature_group_059f1907f0049fe9c9622b75c440410e = L.featureGroup(
+                {}
+            ).addTo(map_b8db6cd8a64b7288968abfe5165273cf);
+        
+    
+            var circle_marker_76829b94b6b5dcc8ec3f928f5557dd49 = L.circleMarker(
+                [51.5277583, -0.0764837],
+                {"bubblingMouseEvents": true, "color": "#fa0c8b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fa0c8b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_059f1907f0049fe9c9622b75c440410e);
+        
+    
+        var popup_69a343108f60d9447de82db608640926 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f7abd1fde030c95859301053198449da = $(`<div id="html_f7abd1fde030c95859301053198449da" style="width: 100.0%; height: 100.0%;">Beamery<br> Category: tablet<br> Apple iPad mini 2019<br> Quantity: 3</div>`)[0];
+            popup_69a343108f60d9447de82db608640926.setContent(html_f7abd1fde030c95859301053198449da);
+        
+
+        circle_marker_76829b94b6b5dcc8ec3f928f5557dd49.bindPopup(popup_69a343108f60d9447de82db608640926)
+        ;
+
+        
+    
+    
+            var feature_group_abcbd73c654aed3835ad57539d162339 = L.featureGroup(
+                {}
+            ).addTo(map_b8db6cd8a64b7288968abfe5165273cf);
+        
+    
+            var circle_marker_8c89e707172603db784234610a515138 = L.circleMarker(
+                [51.5078179, -0.123686],
+                {"bubblingMouseEvents": true, "color": "#2cb0f2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb0f2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_abcbd73c654aed3835ad57539d162339);
+        
+    
+        var popup_bec45b455ebd67135c84dd8243d0f920 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6103f8b7cbff66c04e746cef278471ee = $(`<div id="html_6103f8b7cbff66c04e746cef278471ee" style="width: 100.0%; height: 100.0%;">Pwc<br> Category: mobile phone<br> Huaweii p30 pro<br> Quantity: 7</div>`)[0];
+            popup_bec45b455ebd67135c84dd8243d0f920.setContent(html_6103f8b7cbff66c04e746cef278471ee);
+        
+
+        circle_marker_8c89e707172603db784234610a515138.bindPopup(popup_bec45b455ebd67135c84dd8243d0f920)
+        ;
+
+        
+    
+    
+            var circle_marker_34220123f395ec781f9a4b657c97ffc9 = L.circleMarker(
+                [51.28501795, -0.7599136640292189],
+                {"bubblingMouseEvents": true, "color": "#2cb0f2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb0f2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_abcbd73c654aed3835ad57539d162339);
+        
+    
+        var popup_7a061e0484381c4ace9e8017a30a62f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e134404a1f52c9332f90cdfac123142e = $(`<div id="html_e134404a1f52c9332f90cdfac123142e" style="width: 100.0%; height: 100.0%;">Exclaimer<br> Category: mobile phone<br> Lenovo ThinkPad E14<br> Quantity: 12</div>`)[0];
+            popup_7a061e0484381c4ace9e8017a30a62f8.setContent(html_e134404a1f52c9332f90cdfac123142e);
+        
+
+        circle_marker_34220123f395ec781f9a4b657c97ffc9.bindPopup(popup_7a061e0484381c4ace9e8017a30a62f8)
+        ;
+
+        
+    
+    
+            var layer_control_f624cee0968414f1ad0b4759550f5abc = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_8dc82bb653a28d6b75a9c5028cb20756,
+                },
+                overlays :  {
+                    "Laptops" : feature_group_ca1912ee51d96817dccb98215d7f7bc3,
+                    "Tablets" : feature_group_059f1907f0049fe9c9622b75c440410e,
+                    "Mobile Phones" : feature_group_abcbd73c654aed3835ad57539d162339,
+                },
+            };
+            L.control.layers(
+                layer_control_f624cee0968414f1ad0b4759550f5abc.base_layers,
+                layer_control_f624cee0968414f1ad0b4759550f5abc.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_b8db6cd8a64b7288968abfe5165273cf);
+        
+</script>
