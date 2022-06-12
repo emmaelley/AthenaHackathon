@@ -1,0 +1,6 @@
+lot_id,company_name,type,make,model,quantity,address,progress
+1,Athena Hackathon,laptop,Apple,MacBook Pro (2018),2,"10 South Pl, London EC2M 7EB",Requested
+2,Pwc,mobile phone,Huaweii,p30 pro,7,"1 Embankment Pl, London WC2N 6RH",Allocated
+3,Beamery,tablet,Apple,iPad mini 2019,3,"97-101 Hackney Rd, London E2 8ET",Available
+4,Visa,laptop,Acer,Swift 3 AMD,4,"107 Fleet St, London EC4A 2AB",Collected
+5,Exclaimer,mobile phone,Lenovo,ThinkPad E14,12,"250 Fowler Ave, Farnborough GU14 7JP",Available
