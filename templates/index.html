@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href='/static/style.css' />
+    <link rel="stylesheet" href='/static/static/style.css' />
     <meta charset="utf-8">
     <title>Welcome</title>
 </head>
 <body>
 <h1>Welcome</h1>
-<!--
-<a href="{{url_for('organisations')}}">Login as a supporting organisation</a>
+
+<h2>
+    Login as a supporting organisation
+</h2>
+<form method="post" action="/loginOrganisation">
+    <p>Name: <input type="text" name="name"></p>
+    <p><input type="submit" value ="submit"></p>
+</form>
+
 <p>Examples of supporting organisations include charities, schools, libraries and local councils.</p>
 
-<a href="{{url_for('donors')}}">Login as a donor company</a>
-<p>Login here to donate your company’s old technology</p> -->
+<h2>
+    Login as a donor company
+</h2>
+<form method="post" action="/loginDonor">
+    <p>Name: <input type="text" name="name"></p>
+    <p><input type="submit" value ="submit"></p>
+</form>
+
+<p>Login here to donate your company’s old technology</p>
+
 
 </body>
 </html>

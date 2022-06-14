@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href='/static/style.css' />
+    <link rel="stylesheet" href='/static/static/style.css' />
     <meta charset="utf-8">
     <title></title>
 </head>
@@ -10,14 +10,16 @@
 
 <a href="{{url_for('index')}}">Home</a>
 
+<h1>Welcome {{ name }}!</h1>
+
 <h2>
-    Request used technology.
+    Request used technology using the below form.
 </h2>
 <form method="post" action="/submitOrganisation">
     <p>Charity Name: <input type="text" name="charity_name"></p>
     <p>Lot ID: <input type="text" name="lot_id"></p>
     <p>Quantity: <input type="text" name="quantity"></p>
-    <p><input type="submitOrganisation"></p>
+    <p><input type="submit" value ="submit"></p>
 </form>
 
 </body>

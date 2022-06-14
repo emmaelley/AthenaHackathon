@@ -1,8 +1,8 @@
-body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; background: darkblue;
-    color: white;}
-a, h1, h2       { color: #94fff4; }
+body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; background: aliceblue;
+    color: black;}
+a, h1, h2       { color: #0c7b70; }
 h1, h2          { margin: 0; }
-h1              { border-bottom: 2px solid #eee; }
+h1              { border-bottom: 2px solid dimgrey; }
 h2              { font-size: 1.2em; }
 
 table.dataframe, .dataframe th, .dataframe td {

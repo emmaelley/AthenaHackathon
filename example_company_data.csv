@@ -4,3 +4,4 @@ lot_id,company_name,type,make,model,quantity,address,progress
 3,Beamery,tablet,Apple,iPad mini 2019,3,"97-101 Hackney Rd, London E2 8ET",Available
 4,Visa,laptop,Acer,Swift 3 AMD,4,"107 Fleet St, London EC4A 2AB",Collected
 5,Exclaimer,mobile phone,Lenovo,ThinkPad E14,12,"250 Fowler Ave, Farnborough GU14 7JP",Available
+6,Dell,laptop,Dell,Latitude 3250,2,"1 The Western Centre, Bracknell RG12 1RW",Available

@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 import pandas as pd
 import folium
-import geopandas as gpd
-import geopy
 from geopy.geocoders import Nominatim
 import matplotlib.colors as colors
+import csv
+
+geolocator = Nominatim(user_agent="myGeocoder")
 
 def latLonFinder(address):
     try:
@@ -19,14 +20,32 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/organisations')
-def organisations():
-    data = pd.read_csv('example_company_data.csv')
-    return render_template('organisations.html', tables = [data.to_html()], titles = ['Available Technology'])
+@app.route("/loginOrganisation", methods=["GET","POST"])
+def loginOrganisation():
+    if request.method == "GET":
+        return redirect(url_for('index'))
+    elif request.method == "POST":
+        userdata = dict(request.form)
+        name = userdata["name"]
+    return redirect(url_for('organisations', name = name))
 
-@app.route('/submitRequest')
-def submitRequest():
-    return render_template('SubmitRequest.html')
+@app.route("/loginDonor", methods=["GET","POST"])
+def loginDonor():
+    if request.method == "GET":
+        return redirect(url_for('index'))
+    elif request.method == "POST":
+        userdata = dict(request.form)
+        name = userdata["name"]
+    return redirect(url_for('donors', name = name))
+
+@app.route('/organisations/<name>')
+def organisations(name):
+    data = pd.read_csv('example_company_data.csv')
+    return render_template('organisations.html', tables = [data.to_html()], titles = ['Available Technology'], name=name)
+
+@app.route('/submitRequest/<name>')
+def submitRequest(name):
+    return render_template('SubmitRequest.html', name=name)
 
 @app.route("/submitOrganisation", methods=["GET","POST"])
 def submitOrganisation():
@@ -44,9 +63,9 @@ def submitOrganisation():
 
 @app.route('/map')
 def map():
-    data = pd.read_csv('example_company_data.csv')
+    data1 = pd.read_csv('example_company_data.csv')
     geolocator = Nominatim(user_agent="myGeocoder")
-    data[["lat","lon"]] = data['address'].apply(latLonFinder)
+    data1[["lat","lon"]] = data1['address'].apply(latLonFinder)
     m = folium.Map(
     location=[51.509865,-0.118092],
     tiles="cartodbpositron",
@@ -55,7 +74,7 @@ def map():
     laptop = folium.FeatureGroup("Laptops")
     tablet = folium.FeatureGroup("Tablets")
     mobile_phone = folium.FeatureGroup("Mobile Phones")
-    available = data[(data['progress']=='Requested') | (data['progress']=='Available')]
+    available = data1[(data1['progress']=='Requested') | (data1['progress']=='Available')]
 
     for company_name, cat, make, model, quantity, lat, lon in zip(available['company_name'], available['type'], available['make'],available['model'],available['quantity'],available['lat'],available['lon']):
         colors_dict = dict([("laptop","#fab30c"),("mobile phone","#2cb0f2"),("tablet","#fa0c8b")])
@@ -73,28 +92,27 @@ def map():
     folium.LayerControl().add_to(m)
     return m._repr_html_()
 
-@app.route('/donors')
-def donors():
-    return render_template('Donors.html')
+@app.route('/donors/<name>')
+def donors(name):
+    return render_template('Donors.html',name=name)
 
-@app.route("/submitDonor", methods=["GET","POST"])
-def submitDonor():
+@app.route("/submitDonor/<name>", methods=["GET","POST"])
+def submitDonor(name):
     if request.method == "GET":
         return redirect(url_for('index'))
     elif request.method == "POST":
         userdata = dict(request.form)
-        company_name = userdata["company_name"][0]
-        cat = userdata["type"][0]
-        make = userdata["make"][0]
-        model = userdata["model"][0]
-        address = userdata["address"][0]
-        quantity = userdata["quantity"][0]
-    if cat not in ["laptop","mobile phone","tablet"]:
-      return "Please submit laptop, mobile phone or tablet in the type field."
+        company_name = userdata["company_name"]
+        cat = userdata["type"]
+        make = userdata["make"]
+        model = userdata["model"]
+        address = userdata["address"]
+        quantity = userdata["quantity"]
     with open('example_company_data.csv', mode='a') as csv_file:
-        data = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        data.writerow([6,company_name,cat,make,model,quantity,address, "Available"])
-        return "Thank you!"
+        data2 = csv.writer(csv_file, delimiter=',')
+        data2.writerow([6,str(company_name),str(cat),str(make),str(model),int(quantity),str(address), "Available"])
+        csv_file.close()
+        return render_template('thanksReturn.html', name = name)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
